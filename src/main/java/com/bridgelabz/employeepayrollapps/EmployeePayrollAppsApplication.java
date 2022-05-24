@@ -10,12 +10,13 @@ import org.springframework.context.ApplicationContext;
 
 
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
-
+@Slf4j
 public class EmployeePayrollAppsApplication {
 
     public static void main(String[] args) {
-         SpringApplication.run(EmployeePayrollAppsApplication.class, args);
+        ApplicationContext context = SpringApplication.run(EmployeePayrollAppsApplication.class, args);
 
+        log.info("Employee Payroll App Started in {} Environment", context.getEnvironment().getProperty("environment"));
 
     }
 }
